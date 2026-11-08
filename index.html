@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b14">
+<meta name="description" content="Max'N'Ash Official Creator Hub: gaming, music and animations.">
+<title>MAX'N'ASH | Official Creator Hub</title>
+<style>
+:root{--bg:#080b14;--panel:#111827;--line:#2b3850;--red:#ff3154;--blue:#13c7f4;--purple:#a78bfa;--muted:#aab4c7;--white:#f7f8fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.55;overflow-x:hidden}
+body:before{content:"";position:absolute;z-index:-1;top:0;left:0;width:100%;height:460px;background:radial-gradient(ellipse at 10% 18%,#28132e 0 18%,transparent 18.2%),radial-gradient(ellipse at 95% 20%,#09233a 0 21%,transparent 21.2%);pointer-events:none}
+.topline{height:9px;background:linear-gradient(90deg,var(--red) 0 50%,var(--blue) 50% 100%)}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:10px;z-index:10;padding:15px 0}
+nav{display:flex;align-items:center;justify-content:space-between;gap:18px;background:#111827ed;border:1px solid var(--line);border-radius:24px;padding:13px 24px;backdrop-filter:blur(12px)}
+.brand{font-size:clamp(20px,3vw,30px);font-weight:900;letter-spacing:.3px;color:white;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--blue)}.navlinks{display:flex;gap:clamp(12px,4vw,48px)}.navlinks a{color:#c9d1df;text-decoration:none;font-size:13px;font-weight:800}.navlinks a:hover{color:var(--blue)}
+.hero{min-height:340px;padding:34px 0 26px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.03;letter-spacing:.5px;margin:0 0 18px;font-weight:900}h1 span{display:block;color:var(--blue);margin-top:8px}
+.tagline{font-size:clamp(17px,2vw,23px);color:var(--muted);margin:0 0 24px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;padding:15px 24px;border-radius:18px;font-weight:900;font-size:14px;border:2px solid var(--blue);color:white;transition:transform .18s,filter .18s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.btn.primary{background:var(--red);border-color:var(--red)}.hero-art{display:flex;align-items:center;justify-content:center}.hero-art img{width:min(100%,430px);max-height:290px;object-fit:contain;border:1px solid var(--line);border-radius:24px;padding:12px;background:var(--panel)}
+.section{padding:28px 0 10px}.section-title{font-size:clamp(24px,3vw,30px);margin:0 0 20px;font-weight:900}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{display:block;text-decoration:none;color:inherit;background:var(--panel);border:2px solid var(--line);border-radius:22px;padding:20px;min-height:145px;transition:transform .2s}.card:hover{transform:translateY(-4px)}.card h3{margin:0 0 10px;font-size:21px}.card p{color:var(--muted);font-size:14px;margin:0}.red{border-color:var(--red)}.red h3{color:var(--red)}.blue{border-color:var(--blue)}.blue h3{color:var(--blue)}.purple{border-color:var(--purple)}.purple h3{color:var(--purple)}
+.music-section{margin-top:28px;padding:28px;background:var(--panel);border:1px solid var(--line);border-radius:26px}.subtext{color:var(--muted);margin-top:-10px}
+.music-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;margin-top:22px;align-items:start}.track-list{display:grid;gap:10px}.track{display:flex;align-items:center;gap:12px;text-align:left;background:#080b14;border:1px solid var(--line);border-radius:15px;padding:13px;color:white;cursor:pointer;width:100%;font:inherit}.track:hover,.track.active{border-color:var(--blue);background:#0b1b2a}.track.active .play-icon{background:var(--red)}.play-icon{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:12px;background:var(--blue);color:#06101a;font-weight:900}.track strong{display:block;font-size:14px}.track small{color:var(--muted);font-size:12px}.player-box{background:#080b14;border:1px solid var(--line);border-radius:18px;padding:14px}.now-playing{font-weight:800;margin:0 0 12px}.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#05070c;border-radius:12px;overflow:hidden}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.hint{font-size:12px;color:var(--muted);margin:10px 2px 0}
+.community{margin:30px 0 34px;padding:28px;background:var(--panel);border:1px solid var(--line);border-radius:26px}.message-link{display:block;margin-top:22px;padding:20px 24px;border:1px solid var(--line);border-radius:16px;background:#080b14;color:var(--blue);text-decoration:none;font-weight:800}.message-link:hover{border-color:var(--blue)}
+footer{color:#7e8aa0;font-size:12px;font-weight:800;letter-spacing:.6px;padding:0 0 30px}.footerline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:720px){header{padding:10px 0}nav{padding:12px 14px;border-radius:18px;flex-wrap:wrap}.brand{width:100%;text-align:center}.navlinks{width:100%;justify-content:space-around;gap:8px}.navlinks a{font-size:12px}.hero{grid-template-columns:1fr;padding-top:28px;gap:24px}.hero-art img{max-height:230px;width:min(100%,390px)}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:auto}.music-section,.community{padding:20px}.music-layout{grid-template-columns:1fr}.section{padding-top:20px}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header class="wrap">
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#home">MAX'N'<span>ASH</span></a>
+    <div class="navlinks"><a href="#home">HOME</a><a href="#videos">VIDEOS</a><a href="#music">MUSIC</a><a href="#about">ABOUT</a></div>
+  </nav>
+</header>
+<main class="wrap">
+  <section class="hero" id="home">
+    <div>
+      <h1>TWO CREATORS.<span>ONE WORLD.</span></h1>
+      <p class="tagline">Gaming • Music • Animations</p>
+      <div class="buttons"><a class="btn primary" href="#videos">WATCH VIDEOS</a><a class="btn" href="#music">LISTEN TO MUSIC</a></div>
+    </div>
+    <div class="hero-art"><img src="maxandash-logo.png" alt="Max'N'Ash creator logo"></div>
+  </section>
+
+  <section class="section" id="videos">
+    <h2 class="section-title">EXPLORE MAX'N'ASH</h2>
+    <div class="cards">
+      <a class="card red" href="https://www.youtube.com/@maxandash-tru" target="_blank" rel="noopener"><h3>VIDEOS</h3><p>Minecraft • Challenges • Shorts</p></a>
+      <a class="card blue" href="#music"><h3>MUSIC</h3><p>Original songs • Listen right here</p></a>
+      <a class="card purple" href="#about"><h3>ABOUT US</h3><p>Meet Max &amp; Ash</p></a>
+    </div>
+  </section>
+
+  <section class="music-section" id="music">
+    <h2 class="section-title">MAX'N'ASH MUSIC PLAYER</h2>
+    <p class="subtext">Choose a track and press play. The video player stays on this page.</p>
+    <div class="music-layout">
+      <div class="track-list" id="trackList" aria-label="Song list"></div>
+      <div class="player-box">
+        <p class="now-playing" id="nowPlaying">Now playing: Track 01</p>
+        <div class="video-frame" id="playerWrap">
+          <iframe id="musicPlayer" src="https://www.youtube-nocookie.com/embed/9eeitea05SM?rel=0" title="Max'N'Ash music player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="hint">Playback is provided by YouTube. Some videos may not play here if embedding is disabled by the uploader or the video is age-restricted.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="community" id="about">
+    <h2 class="section-title">JOIN THE COMMUNITY</h2>
+    <p class="subtext">Talk to us • Support the channel • Stay connected</p>
+    <a class="message-link" href="https://www.youtube.com/@maxandash-tru" target="_blank" rel="noopener">Message Max &amp; Ash → Visit our YouTube channel</a>
+    <div style="margin-top:22px">
+      <h3>WHO ARE MAX'N'ASH?</h3>
+      <p style="color:var(--muted);margin-bottom:0">Two creators building a world of gaming, music, animations and big ideas. Subscribe and join the journey.</p>
+    </div>
+  </section>
+  <footer><div class="footerline"><span>MAX'N'ASH &nbsp; | &nbsp; RED × BLUE</span><span>GAMING • MUSIC • ANIMATION</span></div></footer>
+</main>
+<script>
+const tracks = [
+  {id:"9eeitea05SM", title:"Track 01"},
+  {id:"VAmfuK0sV-I", title:"Track 02"},
+  {id:"_vPGB_1w_Ec", title:"Track 03"},
+  {id:"rLXvnnQ77Sw", title:"Track 04"},
+  {id:"mlMOZ-lB48Y", title:"Track 05"}
+];
+const list = document.getElementById("trackList");
+const player = document.getElementById("musicPlayer");
+const now = document.getElementById("nowPlaying");
+function selectTrack(index){
+  const t=tracks[index];
+  player.src="https://www.youtube-nocookie.com/embed/"+t.id+"?autoplay=1&rel=0";
+  now.textContent="Now playing: "+t.title;
+  document.querySelectorAll(".track").forEach((b,i)=>{b.classList.toggle("active",i===index);b.setAttribute("aria-pressed",i===index?"true":"false")});
+}
+tracks.forEach((t,i)=>{
+  const button=document.createElement("button");
+  button.className="track"+(i===0?" active":"");
+  button.type="button";
+  button.setAttribute("aria-pressed",i===0?"true":"false");
+  button.innerHTML='<span class="play-icon">▶</span><span><strong>'+t.title+'</strong><small>Max’N’Ash music</small></span>';
+  button.addEventListener("click",()=>selectTrack(i));
+  list.appendChild(button);
+});
+</script>
+</body>
+</html>
